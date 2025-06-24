@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Linkedin, Github, Twitter, MapPin, Clock } from "lucide-react";
+import { Mail, Linkedin, Github, Twitter, MapPin, Clock, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -33,29 +33,29 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      value: "akshat@example.com",
-      link: "mailto:akshat@example.com",
+      value: "rawaks0910@gmail.com",
+      link: "mailto:rawaks0910@gmail.com",
       description: "For serious inquiries and job offers"
+    },
+    {
+      name: "Phone",
+      icon: Phone,
+      value: "+91 7217510306",
+      link: "tel:+917217510306",
+      description: "Call me for urgent discussions"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      value: "linkedin.com/in/akshatsinghrawat",
-      link: "https://linkedin.com/in/akshatsinghrawat",
+      value: "linkedin.com/in/akshat-singh-rawat",
+      link: "https://www.linkedin.com/in/akshat-singh-rawat-bb52552a6",
       description: "Professional networking and career updates"
     },
     {
-      name: "GitHub",
-      icon: Github,
-      value: "github.com/akshatsinghrawat",
-      link: "https://github.com/akshatsinghrawat",
-      description: "Where my code lives and dies"
-    },
-    {
-      name: "Twitter",
+      name: "X (Twitter)",
       icon: Twitter,
-      value: "@akshatsinghrawat",
-      link: "https://twitter.com/akshatsinghrawat",
+      value: "@AkshatRawatlive",
+      link: "https://x.com/AkshatRawatlive",
       description: "Hot takes on AI and existential programming thoughts"
     }
   ];

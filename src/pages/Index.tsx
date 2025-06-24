@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -52,6 +53,18 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
+            {/* Profile Picture */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/fda9e274-cd0c-4fad-99f2-9c910a4d09ff.png" 
+                  alt="Akshat Singh Rawat" 
+                  className="w-32 h-32 rounded-full object-cover border-4 border-vibrant-orange shadow-lg"
+                />
+                <div className="absolute inset-0 rounded-full bg-vibrant-orange/20 animate-pulse"></div>
+              </div>
+            </div>
+
             <h1 className="text-6xl font-bold mb-6">
               <span className="text-vibrant-orange">AI Developer</span>
               <br />
