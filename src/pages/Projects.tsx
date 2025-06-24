@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Calendar, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const projects = [
@@ -87,15 +88,32 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-deep-charcoal text-pure-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-deep-charcoal/90 backdrop-blur-sm border-b border-light-gray/20 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <Link to="/" className="text-2xl font-bold text-vibrant-orange">
+              Akshat Singh Rawat
+            </Link>
+            <div className="flex gap-8">
+              <Link to="/" className="hover:text-vibrant-orange transition-colors">Home</Link>
+              <Link to="/about" className="hover:text-vibrant-orange transition-colors">About</Link>
+              <Link to="/projects" className="text-vibrant-orange">Projects</Link>
+              <Link to="/contact" className="hover:text-vibrant-orange transition-colors">Contact</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       <div className="container mx-auto px-6 py-32">
         <div className="max-w-6xl mx-auto">
           {/* Hero */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h1 className="text-5xl font-bold text-pure-white mb-6">
               My Projects
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-light-gray leading-relaxed max-w-3xl mx-auto">
               A collection of AI experiments, practical tools, and solutions to problems I created while trying to solve other problems
             </p>
           </div>
@@ -103,7 +121,7 @@ const Projects = () => {
           {/* Projects Grid */}
           <div className="grid lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-white/80 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="bg-jet-black border-light-gray/20 overflow-hidden hover:border-vibrant-orange/50 transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div className="text-4xl">{project.emoji}</div>
@@ -111,10 +129,10 @@ const Projects = () => {
                       <Badge 
                         variant="secondary" 
                         className={`${
-                          project.status === 'Complete' ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800' :
-                          project.status === 'Active' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800' :
-                          project.status === 'Beta' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 border-orange-200 dark:border-orange-800' :
-                          'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 border-purple-200 dark:border-purple-800'
+                          project.status === 'Complete' ? 'bg-green-500/10 text-green-400 border-green-500/30' :
+                          project.status === 'Active' ? 'bg-vibrant-orange/10 text-vibrant-orange border-vibrant-orange/30' :
+                          project.status === 'Beta' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30' :
+                          'bg-purple-500/10 text-purple-400 border-purple-500/30'
                         }`}
                       >
                         {project.status}
@@ -123,12 +141,12 @@ const Projects = () => {
                   </div>
 
                   <div className="flex items-center gap-2 mb-2">
-                    <CardTitle className="text-slate-900 dark:text-white text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <CardTitle className="text-pure-white text-xl group-hover:text-vibrant-orange transition-colors">
                       {project.title}
                     </CardTitle>
                   </div>
 
-                  <div className="flex items-center gap-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+                  <div className="flex items-center gap-4 mb-4 text-sm text-light-gray">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {project.date}
@@ -137,16 +155,16 @@ const Projects = () => {
                       <Star className="w-4 h-4" />
                       {project.stars}
                     </div>
-                    <Badge variant="outline" className="border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 text-xs">
+                    <Badge variant="outline" className="border-light-gray/30 text-light-gray text-xs">
                       {project.category}
                     </Badge>
                   </div>
 
-                  <CardDescription className="text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-4">
+                  <CardDescription className="text-light-gray text-base leading-relaxed mb-4">
                     {project.description}
                   </CardDescription>
 
-                  <CardDescription className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                  <CardDescription className="text-light-gray/70 text-sm leading-relaxed">
                     {project.longDescription}
                   </CardDescription>
                 </CardHeader>
@@ -154,18 +172,18 @@ const Projects = () => {
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400">
+                      <Badge key={techIndex} variant="outline" className="border-light-gray/30 text-light-gray">
                         {tech}
                       </Badge>
                     ))}
                   </div>
 
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" className="border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <Button variant="outline" size="sm" className="border-vibrant-orange/30 text-vibrant-orange hover:bg-vibrant-orange hover:text-pure-white">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
                     </Button>
-                    <Button variant="outline" size="sm" className="border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <Button variant="outline" size="sm" className="border-light-gray/30 text-light-gray hover:bg-light-gray hover:text-deep-charcoal">
                       <Github className="w-4 h-4 mr-2" />
                       Source Code
                     </Button>
@@ -177,12 +195,14 @@ const Projects = () => {
 
           {/* CTA */}
           <div className="text-center mt-16">
-            <p className="text-slate-600 dark:text-slate-300 mb-6">
+            <p className="text-light-gray mb-6">
               Interested in collaborating on something equally ridiculous?
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3">
-              Let's Build Something
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="bg-vibrant-orange hover:bg-orange-600 text-pure-white px-8 py-3">
+                Let's Build Something
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

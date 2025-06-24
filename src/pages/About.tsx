@@ -37,25 +37,42 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-deep-charcoal text-pure-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-deep-charcoal/90 backdrop-blur-sm border-b border-light-gray/20 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <Link to="/" className="text-2xl font-bold text-vibrant-orange">
+              Akshat Singh Rawat
+            </Link>
+            <div className="flex gap-8">
+              <Link to="/" className="hover:text-vibrant-orange transition-colors">Home</Link>
+              <Link to="/about" className="text-vibrant-orange">About</Link>
+              <Link to="/projects" className="hover:text-vibrant-orange transition-colors">Projects</Link>
+              <Link to="/contact" className="hover:text-vibrant-orange transition-colors">Contact</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       <div className="container mx-auto px-6 py-32">
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h1 className="text-5xl font-bold text-pure-white mb-6">
               About Me
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-xl text-light-gray leading-relaxed">
               The unnecessarily detailed backstory of how I ended up convincing computers to think
             </p>
           </div>
 
           {/* Bio */}
-          <Card className="mb-16 bg-white/80 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700">
+          <Card className="mb-16 bg-jet-black border-light-gray/20">
             <CardHeader>
-              <CardTitle className="text-slate-900 dark:text-white">The Origin Story</CardTitle>
+              <CardTitle className="text-pure-white">The Origin Story</CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-600 dark:text-slate-300 space-y-4">
+            <CardContent className="text-light-gray space-y-4">
               <p>
                 Hi there! I'm Akshat Singh Rawat, an AI Developer who somehow convinced people I know what I'm doing. 
                 My journey into AI started when I realized that teaching machines to think was easier than understanding humans.
@@ -75,25 +92,25 @@ const About = () => {
 
           {/* Timeline */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+            <h2 className="text-3xl font-bold text-pure-white mb-8 text-center">
               Professional Journey
             </h2>
             <div className="space-y-8">
               {timeline.map((item, index) => (
-                <Card key={index} className="bg-white/80 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700">
+                <Card key={index} className="bg-jet-black border-light-gray/20">
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      <Badge variant="outline" className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800">
+                      <Badge variant="outline" className="bg-vibrant-orange/10 text-vibrant-orange border-vibrant-orange/30">
                         {item.year}
                       </Badge>
                       <div>
-                        <CardTitle className="text-slate-900 dark:text-white">{item.title}</CardTitle>
-                        <CardDescription className="text-slate-600 dark:text-slate-400">{item.company}</CardDescription>
+                        <CardTitle className="text-pure-white">{item.title}</CardTitle>
+                        <CardDescription className="text-light-gray">{item.company}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 dark:text-slate-300">{item.description}</p>
+                    <p className="text-light-gray">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -102,18 +119,18 @@ const About = () => {
 
           {/* Interests */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+            <h2 className="text-3xl font-bold text-pure-white mb-8 text-center">
               When I'm Not Coding
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {interests.map((interest, index) => (
-                <Card key={index} className="bg-white/80 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300">
+                <Card key={index} className="bg-jet-black border-light-gray/20 hover:border-vibrant-orange/50 transition-all duration-300">
                   <CardHeader className="text-center">
-                    <div className="mx-auto w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-3">
-                      <interest.icon className="w-6 h-6 text-white" />
+                    <div className="mx-auto w-12 h-12 bg-vibrant-orange rounded-xl flex items-center justify-center mb-3">
+                      <interest.icon className="w-6 h-6 text-pure-white" />
                     </div>
-                    <CardTitle className="text-slate-900 dark:text-white text-lg">{interest.name}</CardTitle>
-                    <CardDescription className="text-slate-600 dark:text-slate-400 text-sm">
+                    <CardTitle className="text-pure-white text-lg">{interest.name}</CardTitle>
+                    <CardDescription className="text-light-gray text-sm">
                       {interest.description}
                     </CardDescription>
                   </CardHeader>
@@ -125,7 +142,7 @@ const About = () => {
           {/* CTA */}
           <div className="text-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3">
+              <Button size="lg" className="bg-vibrant-orange hover:bg-orange-600 text-pure-white px-8 py-3">
                 Let's Work Together
               </Button>
             </Link>
