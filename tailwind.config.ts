@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,14 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Custom portfolio palette
+				'deep-charcoal': '#232834',
+				'jet-black': '#181A1E',
+				'vibrant-orange': '#FF6A1F',
+				'pure-white': '#FFFFFF',
+				'light-gray': '#C5C7CA',
+
+				// Standard shadcn colors updated with palette
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
