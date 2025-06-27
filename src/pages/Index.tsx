@@ -8,24 +8,24 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const projects = [
     {
-      title: "Neural Network Optimizer",
-      description: "AI-powered hyperparameter tuning system using genetic algorithms",
-      tech: ["Python", "TensorFlow", "React"],
-      emoji: "🧠",
+      title: "AI Chatbot for Customer Service",
+      description: "Intelligent conversational AI that handles customer inquiries with 95% accuracy",
+      tech: ["Python", "NLP", "TensorFlow", "Flask"],
+      emoji: "🤖",
       gradient: "from-vibrant-orange to-orange-600"
     },
     {
-      title: "Smart Code Reviewer", 
-      description: "Automated code analysis with AI-powered suggestions",
-      tech: ["GPT-4", "TypeScript", "Node.js"],
-      emoji: "🔍",
+      title: "Stock Price Prediction System", 
+      description: "ML model predicting stock movements using historical data and market sentiment",
+      tech: ["Python", "LSTM", "Pandas", "Scikit-learn"],
+      emoji: "📈",
       gradient: "from-vibrant-orange to-red-600"
     },
     {
-      title: "Mood-Based Music AI",
-      description: "Emotion detection from text to curate perfect playlists",
-      tech: ["Python", "NLP", "Spotify API"],
-      emoji: "🎵",
+      title: "AI-Based Medical Diagnosis System",
+      description: "Deep learning system for automated medical image analysis and diagnosis",
+      tech: ["PyTorch", "Computer Vision", "CNN", "Medical Imaging"],
+      emoji: "🏥",
       gradient: "from-vibrant-orange to-pink-600"
     }
   ];
@@ -89,7 +89,7 @@ const Index = () => {
 
             {/* Tech Stack */}
             <div className="flex justify-center flex-wrap gap-4">
-              {["Python", "TensorFlow", "React", "TypeScript", "Docker", "AWS"].map((tech) => (
+              {["Python", "TensorFlow", "PyTorch", "OpenCV", "NLP", "Deep Learning"].map((tech) => (
                 <Badge key={tech} variant="outline" className="border-vibrant-orange text-vibrant-orange bg-transparent px-4 py-2">
                   {tech}
                 </Badge>
@@ -104,7 +104,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-pure-white mb-4">
-              Featured <span className="text-vibrant-orange">Projects</span>
+              Featured <span className="text-vibrant-orange">AI Projects</span>
             </h2>
             <p className="text-light-gray text-lg">
               AI solutions that actually work in production
@@ -146,8 +146,8 @@ const Index = () => {
               Ready to Build Something <span className="text-vibrant-orange">Amazing?</span>
             </h2>
             <p className="text-light-gray text-lg mb-8">
-              Whether you need AI integration, full-stack development, or just want to discuss 
-              the existential implications of artificial consciousness over coffee.
+              Whether you need AI integration, machine learning solutions, or want to discuss 
+              the future of artificial intelligence over coffee.
             </p>
             <Link to="/contact">
               <Button size="lg" className="bg-vibrant-orange hover:bg-orange-600 text-pure-white px-8 py-3">
