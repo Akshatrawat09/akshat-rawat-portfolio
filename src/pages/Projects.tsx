@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -40,102 +39,6 @@ const Projects = () => {
       ]
     },
     {
-      title: "Face Detection System",
-      description: "Real-time face detection and recognition system using computer vision. Capable of identifying multiple faces simultaneously with high accuracy for security applications.",
-      tech: ["OpenCV", "Python", "MTCNN", "FaceNet", "NumPy"],
-      category: "Computer Vision",
-      emoji: "👤",
-      status: "Complete",
-      date: "2023",
-      stars: 128,
-      features: [
-        "Real-time face detection and tracking",
-        "Face recognition with 99.2% accuracy",
-        "Anti-spoofing mechanisms",
-        "Multi-face simultaneous processing"
-      ]
-    },
-    {
-      title: "Image Classification System",
-      description: "Deep learning system for automated image classification across multiple categories. Uses convolutional neural networks to achieve state-of-the-art accuracy on custom datasets.",
-      tech: ["PyTorch", "CNN", "ResNet", "Transfer Learning", "CUDA"],
-      category: "Computer Vision",
-      emoji: "🖼️",
-      status: "Complete",
-      date: "2023",
-      stars: 174,
-      features: [
-        "Custom CNN architecture with 96% accuracy",
-        "Transfer learning implementation",
-        "Data augmentation techniques",
-        "Batch processing capabilities"
-      ]
-    },
-    {
-      title: "Personalized Recommendation Engine",
-      description: "AI-powered recommendation system that analyzes user behavior and preferences to suggest relevant content. Implemented collaborative filtering and content-based approaches.",
-      tech: ["Python", "Scikit-learn", "Apache Spark", "Redis", "PostgreSQL"],
-      category: "Recommendation Systems",
-      emoji: "🎯",
-      status: "Production",
-      date: "2023",
-      stars: 189,
-      features: [
-        "Hybrid recommendation algorithms",
-        "Cold start problem solutions",
-        "A/B testing framework",
-        "Real-time personalization"
-      ]
-    },
-    {
-      title: "Predictive Maintenance System",
-      description: "IoT-integrated AI system that predicts equipment failures before they occur. Uses sensor data and machine learning to optimize maintenance schedules and reduce downtime.",
-      tech: ["Python", "IoT Sensors", "Time Series Analysis", "Random Forest", "MQTT"],
-      category: "Industrial AI",
-      emoji: "⚙️",
-      status: "Beta",
-      date: "2023",
-      stars: 142,
-      features: [
-        "Anomaly detection algorithms",
-        "Predictive failure analysis",
-        "IoT sensor integration",
-        "Maintenance schedule optimization"
-      ]
-    },
-    {
-      title: "AI-Based Medical Diagnosis System",
-      description: "Deep learning system for automated medical image analysis and diagnosis assistance. Trained on medical imaging datasets to support healthcare professionals in decision-making.",
-      tech: ["PyTorch", "Medical Imaging", "CNN", "DICOM", "Flask"],
-      category: "Healthcare AI",
-      emoji: "🏥",
-      status: "Research",
-      date: "2024",
-      stars: 267,
-      features: [
-        "Medical image segmentation",
-        "Disease classification algorithms",
-        "HIPAA-compliant architecture",
-        "Integration with hospital systems"
-      ]
-    },
-    {
-      title: "Autonomous Driving System",
-      description: "Computer vision and deep learning system for autonomous vehicle navigation. Implements object detection, path planning, and decision-making algorithms for self-driving capabilities.",
-      tech: ["Python", "YOLO", "OpenCV", "ROS", "LiDAR"],
-      category: "Autonomous Systems",
-      emoji: "🚗",
-      status: "Research",
-      date: "2023",
-      stars: 312,
-      features: [
-        "Real-time object detection and tracking",
-        "Path planning algorithms",
-        "Sensor fusion techniques",
-        "Safety-critical system design"
-      ]
-    },
-    {
       title: "Fake News Detection",
       description: "Natural language processing system that identifies and classifies fake news articles. Uses advanced NLP techniques and machine learning to analyze text credibility and source reliability.",
       tech: ["Python", "BERT", "NLP", "Transformers", "FastAPI"],
@@ -152,19 +55,19 @@ const Projects = () => {
       ]
     },
     {
-      title: "Smart Home Automation with AI",
-      description: "AI-powered home automation system that learns user preferences and optimizes energy consumption. Integrates with IoT devices to create intelligent living environments.",
-      tech: ["Python", "IoT", "Machine Learning", "MQTT", "React"],
-      category: "IoT & AI",
-      emoji: "🏠",
+      title: "Gamified Social Study Companion",
+      description: "Interactive learning platform that transforms studying into an engaging social experience. Features gamification elements, collaborative study rooms, and progress tracking to motivate students and enhance learning outcomes.",
+      tech: ["React", "Node.js", "MongoDB", "Socket.io", "Express"],
+      category: "Educational Technology",
+      emoji: "🎮",
       status: "Active",
       date: "2024",
-      stars: 223,
+      stars: 245,
       features: [
-        "Intelligent device scheduling",
-        "Energy consumption optimization",
-        "Voice command integration",
-        "Predictive automation based on habits"
+        "Real-time collaborative study sessions",
+        "Achievement system with badges and leaderboards",
+        "AI-powered study recommendations",
+        "Social features with study groups and challenges"
       ]
     }
   ];

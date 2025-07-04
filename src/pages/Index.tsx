@@ -22,11 +22,18 @@ const Index = () => {
       gradient: "from-vibrant-orange to-red-600"
     },
     {
-      title: "AI-Based Medical Diagnosis System",
-      description: "Deep learning system for automated medical image analysis and diagnosis",
-      tech: ["PyTorch", "Computer Vision", "CNN", "Medical Imaging"],
-      emoji: "🏥",
+      title: "Fake News Detection",
+      description: "NLP system that identifies and classifies fake news articles with advanced text analysis",
+      tech: ["Python", "BERT", "NLP", "Transformers"],
+      emoji: "📰",
       gradient: "from-vibrant-orange to-pink-600"
+    },
+    {
+      title: "Gamified Social Study Companion",
+      description: "Interactive learning platform that makes studying engaging through gamification and social features",
+      tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+      emoji: "🎮",
+      gradient: "from-vibrant-orange to-purple-600"
     }
   ];
 
