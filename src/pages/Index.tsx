@@ -34,29 +34,29 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black relative overflow-hidden">
+    <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 border border-gray-200 rotate-45 animate-float opacity-60"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gray-100 rounded-full animate-pulse-glow"></div>
-        <div className="absolute bottom-40 left-20 w-40 h-40 border-2 border-gray-300 animate-rotate-3d"></div>
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-gray-200 to-gray-300 clip-path-triangle animate-float"></div>
-        <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-gray-200 rounded-lg rotate-12 animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gray-200 rotate-45 animate-float"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 border border-gray-700 rotate-45 animate-float opacity-60"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gray-800 rounded-full animate-pulse-glow"></div>
+        <div className="absolute bottom-40 left-20 w-40 h-40 border-2 border-gray-600 animate-rotate-3d"></div>
+        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-gray-700 to-gray-600 clip-path-triangle animate-float"></div>
+        <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-gray-700 rounded-lg rotate-12 animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gray-700 rotate-45 animate-float"></div>
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
+      <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md border-b border-gray-700 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-black hover:text-gray-700 transition-colors">
+            <Link to="/" className="text-2xl font-bold text-white hover:text-gray-300 transition-colors">
               Akshat Singh Rawat
             </Link>
             <div className="flex gap-8">
-              <Link to="/" className="hover:text-gray-600 transition-colors font-medium">Home</Link>
-              <Link to="/about" className="hover:text-gray-600 transition-colors font-medium">About</Link>
-              <Link to="/projects" className="hover:text-gray-600 transition-colors font-medium">Projects</Link>
-              <Link to="/contact" className="hover:text-gray-600 transition-colors font-medium">Contact</Link>
+              <Link to="/" className="hover:text-gray-300 transition-colors font-medium">Home</Link>
+              <Link to="/about" className="hover:text-gray-300 transition-colors font-medium">About</Link>
+              <Link to="/projects" className="hover:text-gray-300 transition-colors font-medium">Projects</Link>
+              <Link to="/contact" className="hover:text-gray-300 transition-colors font-medium">Contact</Link>
             </div>
           </div>
         </div>
@@ -71,12 +71,12 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-7xl lg:text-8xl font-bold leading-none">
-                  <span className="block text-black">AI</span>
-                  <span className="block text-gray-600">Developer</span>
-                  <span className="block text-black text-shadow">Who Ships</span>
+                  <span className="block text-white">AI</span>
+                  <span className="block text-gray-400">Developer</span>
+                  <span className="block text-white text-shadow">Who Ships</span>
                 </h1>
                 
-                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
                   Building intelligent systems that solve real-world problems. 
                   Transforming ideas into production-ready AI solutions with precision and impact.
                 </p>
@@ -86,7 +86,7 @@ const Index = () => {
                 <Link to="/projects">
                   <Button 
                     size="lg" 
-                    className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg shadow-3d hover-lift group"
+                    className="bg-white hover:bg-gray-200 text-black px-8 py-4 text-lg shadow-3d hover-lift group"
                   >
                     View Projects
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -96,7 +96,7 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg shadow-3d hover-lift"
+                    className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg shadow-3d hover-lift"
                   >
                     Get In Touch
                   </Button>
@@ -105,13 +105,13 @@ const Index = () => {
 
               {/* Tech Stack */}
               <div className="space-y-4">
-                <p className="text-sm text-gray-500 uppercase tracking-wider font-medium">Tech Stack</p>
+                <p className="text-sm text-gray-400 uppercase tracking-wider font-medium">Tech Stack</p>
                 <div className="flex flex-wrap gap-3">
                   {["Python", "TensorFlow", "PyTorch", "OpenCV", "NLP", "Deep Learning"].map((tech) => (
                     <Badge 
                       key={tech} 
                       variant="outline" 
-                      className="border-gray-300 text-gray-700 bg-gray-50 px-4 py-2 hover:bg-gray-100 transition-colors"
+                      className="border-gray-600 text-gray-300 bg-gray-800 px-4 py-2 hover:bg-gray-700 transition-colors"
                     >
                       {tech}
                     </Badge>
@@ -135,13 +135,13 @@ const Index = () => {
                   />
                   
                   {/* Geometric overlay */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-gray-300 bg-white/50 backdrop-blur-sm animate-pulse-glow"></div>
-                  <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gray-900 rotate-45 opacity-80"></div>
+                  <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-gray-600 bg-gray-800/50 backdrop-blur-sm animate-pulse-glow"></div>
+                  <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-white rotate-45 opacity-80"></div>
                 </div>
 
                 {/* Floating elements around portrait */}
-                <div className="absolute -top-8 left-1/4 w-12 h-12 border border-gray-400 rotate-45 animate-float"></div>
-                <div className="absolute -bottom-4 right-1/4 w-8 h-8 bg-gray-200 rounded-full animate-pulse"></div>
+                <div className="absolute -top-8 left-1/4 w-12 h-12 border border-gray-500 rotate-45 animate-float"></div>
+                <div className="absolute -bottom-4 right-1/4 w-8 h-8 bg-gray-700 rounded-full animate-pulse"></div>
               </div>
             </div>
           </div>
@@ -149,13 +149,13 @@ const Index = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 px-6 bg-gray-50 relative">
+      <section className="py-20 px-6 bg-gray-800 relative">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-black mb-6">
-              Featured <span className="text-gray-600">Work</span>
+            <h2 className="text-5xl font-bold text-white mb-6">
+              Featured <span className="text-gray-400">Work</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               AI solutions that deliver measurable impact in production environments
             </p>
           </div>
@@ -164,19 +164,19 @@ const Index = () => {
             {projects.map((project, index) => (
               <Card 
                 key={index} 
-                className="bg-white border-0 shadow-3d hover-lift group cursor-pointer overflow-hidden"
+                className="bg-gray-900 border-0 shadow-3d hover-lift group cursor-pointer overflow-hidden"
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors">
+                    <div className="p-3 bg-gray-800 rounded-lg group-hover:bg-gray-700 transition-colors">
                       {project.icon}
                     </div>
-                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
+                    <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors" />
                   </div>
-                  <CardTitle className="text-xl text-black group-hover:text-gray-700 transition-colors leading-tight">
+                  <CardTitle className="text-xl text-white group-hover:text-gray-300 transition-colors leading-tight">
                     {project.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription className="text-gray-300 leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -186,7 +186,7 @@ const Index = () => {
                       <Badge 
                         key={techIndex} 
                         variant="secondary" 
-                        className="bg-gray-100 text-gray-700 text-xs border-0"
+                        className="bg-gray-800 text-gray-300 text-xs border-0"
                       >
                         {tech}
                       </Badge>
@@ -202,7 +202,7 @@ const Index = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 shadow-3d hover-lift"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 shadow-3d hover-lift"
               >
                 View All Projects
               </Button>
