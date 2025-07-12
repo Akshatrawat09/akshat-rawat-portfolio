@@ -2,138 +2,192 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink, Mail, Linkedin, Brain, Code, Palette, Zap, ArrowRight } from "lucide-react";
+import { Github, ExternalLink, Mail, Linkedin, ArrowRight, Code, Brain, TrendingUp, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   const projects = [
     {
       title: "AI Chatbot for Customer Service",
-      description: "Intelligent conversational AI that handles customer inquiries with 95% accuracy",
+      description: "Intelligent conversational AI that handles customer inquiries with 95% accuracy using advanced NLP techniques.",
       tech: ["Python", "NLP", "TensorFlow", "Flask"],
-      emoji: "🤖",
-      gradient: "from-vibrant-orange to-orange-600"
+      icon: <Brain className="w-8 h-8" />,
     },
     {
       title: "Stock Price Prediction System", 
-      description: "ML model predicting stock movements using historical data and market sentiment",
+      description: "ML model predicting stock movements using historical data and market sentiment analysis with LSTM networks.",
       tech: ["Python", "LSTM", "Pandas", "Scikit-learn"],
-      emoji: "📈",
-      gradient: "from-vibrant-orange to-red-600"
+      icon: <TrendingUp className="w-8 h-8" />,
     },
     {
       title: "Fake News Detection",
-      description: "NLP system that identifies and classifies fake news articles with advanced text analysis",
+      description: "NLP system that identifies and classifies fake news articles using BERT transformers and advanced text analysis.",
       tech: ["Python", "BERT", "NLP", "Transformers"],
-      emoji: "📰",
-      gradient: "from-vibrant-orange to-pink-600"
+      icon: <Code className="w-8 h-8" />,
     },
     {
       title: "Gamified Social Study Companion",
-      description: "Interactive learning platform that makes studying engaging through gamification and social features",
+      description: "Interactive learning platform that makes studying engaging through gamification elements and social features.",
       tech: ["React", "Node.js", "MongoDB", "Socket.io"],
-      emoji: "🎮",
-      gradient: "from-vibrant-orange to-purple-600"
+      icon: <Users className="w-8 h-8" />,
     }
   ];
 
   return (
-    <div className="min-h-screen bg-deep-charcoal text-pure-white">
+    <div className="min-h-screen bg-white text-black relative overflow-hidden">
+      {/* Floating geometric shapes */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 border border-gray-200 rotate-45 animate-float opacity-60"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gray-100 rounded-full animate-pulse-glow"></div>
+        <div className="absolute bottom-40 left-20 w-40 h-40 border-2 border-gray-300 animate-rotate-3d"></div>
+        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-gray-200 to-gray-300 clip-path-triangle animate-float"></div>
+        <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-gray-200 rounded-lg rotate-12 animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gray-200 rotate-45 animate-float"></div>
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-deep-charcoal/90 backdrop-blur-sm border-b border-light-gray/20 z-50">
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-vibrant-orange">
+            <Link to="/" className="text-2xl font-bold text-black hover:text-gray-700 transition-colors">
               Akshat Singh Rawat
             </Link>
             <div className="flex gap-8">
-              <Link to="/" className="hover:text-vibrant-orange transition-colors">Home</Link>
-              <Link to="/about" className="hover:text-vibrant-orange transition-colors">About</Link>
-              <Link to="/projects" className="hover:text-vibrant-orange transition-colors">Projects</Link>
-              <Link to="/contact" className="hover:text-vibrant-orange transition-colors">Contact</Link>
+              <Link to="/" className="hover:text-gray-600 transition-colors font-medium">Home</Link>
+              <Link to="/about" className="hover:text-gray-600 transition-colors font-medium">About</Link>
+              <Link to="/projects" className="hover:text-gray-600 transition-colors font-medium">Projects</Link>
+              <Link to="/contact" className="hover:text-gray-600 transition-colors font-medium">Contact</Link>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="container mx-auto text-center">
-          <div className="max-w-4xl mx-auto">
-            {/* Profile Picture */}
-            <div className="mb-8 flex justify-center">
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/fda9e274-cd0c-4fad-99f2-9c910a4d09ff.png" 
-                  alt="Akshat Singh Rawat" 
-                  className="w-32 h-32 rounded-full object-cover border-4 border-vibrant-orange shadow-lg"
-                />
-                <div className="absolute inset-0 rounded-full bg-vibrant-orange/20 animate-pulse"></div>
+      <section className="pt-32 pb-20 px-6 relative">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h1 className="text-7xl lg:text-8xl font-bold leading-none">
+                  <span className="block text-black">AI</span>
+                  <span className="block text-gray-600">Developer</span>
+                  <span className="block text-black text-shadow">Who Ships</span>
+                </h1>
+                
+                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                  Building intelligent systems that solve real-world problems. 
+                  Transforming ideas into production-ready AI solutions with precision and impact.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/projects">
+                  <Button 
+                    size="lg" 
+                    className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg shadow-3d hover-lift group"
+                  >
+                    View Projects
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg shadow-3d hover-lift"
+                  >
+                    Get In Touch
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Tech Stack */}
+              <div className="space-y-4">
+                <p className="text-sm text-gray-500 uppercase tracking-wider font-medium">Tech Stack</p>
+                <div className="flex flex-wrap gap-3">
+                  {["Python", "TensorFlow", "PyTorch", "OpenCV", "NLP", "Deep Learning"].map((tech) => (
+                    <Badge 
+                      key={tech} 
+                      variant="outline" 
+                      className="border-gray-300 text-gray-700 bg-gray-50 px-4 py-2 hover:bg-gray-100 transition-colors"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <h1 className="text-6xl font-bold mb-6">
-              <span className="text-vibrant-orange">AI Developer</span>
-              <br />
-              <span className="text-pure-white">Who Actually Ships</span>
-            </h1>
-            <p className="text-xl text-light-gray mb-8 leading-relaxed">
-              I build AI systems that solve real problems, not just impressive demos. 
-              Currently making machines smarter while keeping humans in control.
-            </p>
-            <div className="flex justify-center gap-4 mb-12">
-              <Link to="/projects">
-                <Button size="lg" className="bg-vibrant-orange hover:bg-orange-600 text-pure-white px-8 py-3">
-                  View My Work
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg" className="border-light-gray text-light-gray hover:bg-light-gray hover:text-deep-charcoal px-8 py-3">
-                  Let's Talk
-                </Button>
-              </Link>
-            </div>
+            {/* Right - Portrait */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative group">
+                {/* Main portrait */}
+                <div className="w-80 h-80 lg:w-96 lg:h-96 relative shadow-3d-lg hover-lift">
+                  <img 
+                    src="/lovable-uploads/fda9e274-cd0c-4fad-99f2-9c910a4d09ff.png" 
+                    alt="Akshat Singh Rawat - AI Developer" 
+                    className="w-full h-full object-cover filter grayscale contrast-125 brightness-110"
+                    style={{
+                      clipPath: "polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%)"
+                    }}
+                  />
+                  
+                  {/* Geometric overlay */}
+                  <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-gray-300 bg-white/50 backdrop-blur-sm animate-pulse-glow"></div>
+                  <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gray-900 rotate-45 opacity-80"></div>
+                </div>
 
-            {/* Tech Stack */}
-            <div className="flex justify-center flex-wrap gap-4">
-              {["Python", "TensorFlow", "PyTorch", "OpenCV", "NLP", "Deep Learning"].map((tech) => (
-                <Badge key={tech} variant="outline" className="border-vibrant-orange text-vibrant-orange bg-transparent px-4 py-2">
-                  {tech}
-                </Badge>
-              ))}
+                {/* Floating elements around portrait */}
+                <div className="absolute -top-8 left-1/4 w-12 h-12 border border-gray-400 rotate-45 animate-float"></div>
+                <div className="absolute -bottom-4 right-1/4 w-8 h-8 bg-gray-200 rounded-full animate-pulse"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 px-6 bg-jet-black">
+      <section className="py-20 px-6 bg-gray-50 relative">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-pure-white mb-4">
-              Featured <span className="text-vibrant-orange">AI Projects</span>
+            <h2 className="text-5xl font-bold text-black mb-6">
+              Featured <span className="text-gray-600">Work</span>
             </h2>
-            <p className="text-light-gray text-lg">
-              AI solutions that actually work in production
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              AI solutions that deliver measurable impact in production environments
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-deep-charcoal border-light-gray/20 hover:border-vibrant-orange/50 transition-all duration-300 group">
-                <CardHeader>
-                  <div className="text-4xl mb-4">{project.emoji}</div>
-                  <CardTitle className="text-pure-white group-hover:text-vibrant-orange transition-colors">
+              <Card 
+                key={index} 
+                className="bg-white border-0 shadow-3d hover-lift group cursor-pointer overflow-hidden"
+              >
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-3 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors">
+                      {project.icon}
+                    </div>
+                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-black transition-colors" />
+                  </div>
+                  <CardTitle className="text-xl text-black group-hover:text-gray-700 transition-colors leading-tight">
                     {project.title}
                   </CardTitle>
-                  <CardDescription className="text-light-gray">
+                  <CardDescription className="text-gray-600 leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline" className="border-light-gray/30 text-light-gray text-xs">
+                      <Badge 
+                        key={techIndex} 
+                        variant="secondary" 
+                        className="bg-gray-100 text-gray-700 text-xs border-0"
+                      >
                         {tech}
                       </Badge>
                     ))}
@@ -142,35 +196,99 @@ const Index = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-pure-white mb-6">
-              Ready to Build Something <span className="text-vibrant-orange">Amazing?</span>
-            </h2>
-            <p className="text-light-gray text-lg mb-8">
-              Whether you need AI integration, machine learning solutions, or want to discuss 
-              the future of artificial intelligence over coffee.
-            </p>
-            <Link to="/contact">
-              <Button size="lg" className="bg-vibrant-orange hover:bg-orange-600 text-pure-white px-8 py-3">
-                Start a Conversation
+          <div className="text-center mt-12">
+            <Link to="/projects">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 shadow-3d hover-lift"
+              >
+                View All Projects
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-20 px-6 bg-black text-white relative overflow-hidden">
+        {/* Background geometric shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-40 h-40 border border-gray-800 rotate-12 animate-float opacity-30"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-gray-900 rotate-45 animate-pulse"></div>
+        </div>
+        
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h2 className="text-5xl lg:text-6xl font-bold leading-tight">
+              Ready to Build 
+              <span className="block text-gray-400">Something Amazing?</span>
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              Whether you need AI integration, machine learning solutions, or want to discuss 
+              the future of artificial intelligence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  className="bg-white hover:bg-gray-100 text-black px-8 py-4 text-lg shadow-3d hover-lift"
+                >
+                  Start a Conversation
+                </Button>
+              </Link>
+              <a 
+                href="mailto:rawaks0910@gmail.com"
+                className="inline-flex"
+              >
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg shadow-3d hover-lift"
+                >
+                  <Mail className="mr-2 w-5 h-5" />
+                  Email Me
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-jet-black py-8 px-6 border-t border-light-gray/20">
-        <div className="container mx-auto text-center">
-          <p className="text-light-gray">
-            © 2024 Akshat Singh Rawat. Built with React, fueled by curiosity and caffeine.
-          </p>
+      <footer className="bg-gray-900 text-white py-12 px-6">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400">
+                © 2024 Akshat Singh Rawat. Crafted with precision and powered by AI.
+              </p>
+            </div>
+            <div className="flex gap-6">
+              <a 
+                href="https://github.com/AkshatRawat-04" 
+                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors hover-lift"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/akshat-singh-rawat-bb52552a6" 
+                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors hover-lift"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="mailto:rawaks0910@gmail.com" 
+                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors hover-lift"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

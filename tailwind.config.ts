@@ -20,14 +20,22 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Custom portfolio palette
-				'deep-charcoal': '#232834',
-				'jet-black': '#181A1E',
-				'vibrant-orange': '#FF6A1F',
-				'pure-white': '#FFFFFF',
-				'light-gray': '#C5C7CA',
+				// Monochrome 3D palette
+				'black': '#000000',
+				'white': '#FFFFFF',
+				'gray': {
+					900: '#0D0D0D',
+					800: '#1A1A1A',
+					700: '#262626',
+					600: '#404040',
+					500: '#737373',
+					400: '#A3A3A3',
+					300: '#D4D4D4',
+					200: '#E5E5E5',
+					100: '#F5F5F5',
+				},
 
-				// Standard shadcn colors updated with palette
+				// Standard shadcn colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
