@@ -4,30 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Mail, Linkedin, ArrowRight, Code, Brain, TrendingUp, Users, Zap, Cpu, Database } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { NavigationBar } from "@/components/NavigationBar";
 
 const Index = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-
-  // Generate particles
-  const particles = Array.from({ length: 50 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    speed: Math.random() * 2 + 1,
-  }));
 
   const projects = [
     {
@@ -62,110 +47,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden perspective-1000">
-      {/* Dynamic Particle System */}
-      <div className="absolute inset-0 pointer-events-none">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="particle animate-drift"
-            style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              animationDelay: `${particle.id * 0.1}s`,
-              animationDuration: `${particle.speed * 5}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Advanced 3D Floating Geometric Shapes */}
-      <div className="absolute inset-0 pointer-events-none preserve-3d">
-        {/* Large rotating cubes */}
-        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-gray-700 rotate-45 animate-float hover-rotate-3d opacity-60 perspective-1000">
-          <div className="absolute inset-4 border border-gray-600 animate-rotate-3d-slow"></div>
-        </div>
-        
-        {/* Morphing sphere */}
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gray-800 animate-morph animate-pulse-glow-intense">
-          <div className="absolute inset-2 bg-gray-700 rounded-full animate-wave opacity-70"></div>
-        </div>
-        
-        {/* Complex 3D wireframe */}
-        <div className="absolute bottom-40 left-20 w-40 h-40 border-2 border-gray-600 animate-rotate-3d preserve-3d">
-          <div className="absolute inset-4 border border-gray-500 clip-path-hexagon animate-pulse-glow"></div>
-          <div className="absolute inset-8 border border-gray-400 rotate-45 animate-float-reverse"></div>
-        </div>
-        
-        {/* Floating diamond with glow */}
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-gradient-to-br from-gray-700 via-gray-600 to-gray-500 clip-path-diamond animate-float hover-glow">
-          <div className="absolute inset-2 bg-gray-800 clip-path-diamond animate-pulse opacity-80"></div>
-        </div>
-        
-        {/* Interactive tilting cube */}
-        <div className="absolute top-1/2 left-1/4 w-20 h-20 border border-gray-700 rounded-lg rotate-12 animate-tilt-shake interactive-cube glass-morphism">
-          <div className="absolute inset-2 bg-gray-600 rounded animate-rotate-3d opacity-60"></div>
-        </div>
-        
-        {/* Floating hexagon */}
-        <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-gray-700 clip-path-hexagon animate-float-reverse hover-lift">
-          <div className="absolute inset-2 bg-gray-600 rounded-full animate-pulse-glow animate-delay-2"></div>
-        </div>
-        
-        {/* Additional complex shapes */}
-        <div className="absolute top-60 left-1/2 w-36 h-36 border border-gray-600 animate-wave opacity-40">
-          <div className="absolute inset-4 border-2 border-gray-500 rotate-45 animate-drift"></div>
-          <div className="absolute inset-8 bg-gray-700 rounded-full animate-pulse-glow-intense animate-delay-3"></div>
-        </div>
-        
-        {/* Orbiting satellites */}
-        <div className="absolute bottom-60 right-1/4 w-24 h-24 animate-rotate-3d">
-          <div className="absolute top-0 left-1/2 w-4 h-4 bg-gray-600 rounded-full animate-pulse-glow transform -translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-1/2 w-3 h-3 bg-gray-500 rounded-full animate-pulse transform -translate-x-1/2 animate-delay-1"></div>
-          <div className="absolute left-0 top-1/2 w-2 h-2 bg-gray-400 rounded-full animate-pulse-glow transform -translate-y-1/2 animate-delay-2"></div>
-          <div className="absolute right-0 top-1/2 w-3 h-3 bg-gray-600 rounded-full animate-pulse transform -translate-y-1/2 animate-delay-3"></div>
-        </div>
-
-        {/* Magnetic cursor follower */}
-        <div 
-          className="absolute w-6 h-6 bg-white rounded-full opacity-20 animate-pulse-glow-intense pointer-events-none transition-all duration-1000 ease-out"
-          style={{
-            left: `${mousePosition.x / window.innerWidth * 100}%`,
-            top: `${mousePosition.y / window.innerHeight * 100}%`,
-            transform: 'translate(-50%, -50%) scale(0.5)',
-          }}
-        />
-      </div>
-
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full glass-morphism border-b border-gray-700/50 z-50 backdrop-blur-xl">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-white hover:text-gray-300 transition-all duration-300 hover-glow text-shadow-glow">
-              <span className="inline-block hover-tilt">Akshat Singh Rawat</span>
-            </Link>
-            <div className="flex gap-8">
-              <Link to="/" className="hover:text-gray-300 transition-all duration-300 font-medium hover-lift hover-glow relative group">
-                Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link to="/about" className="hover:text-gray-300 transition-all duration-300 font-medium hover-lift hover-glow relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link to="/projects" className="hover:text-gray-300 transition-all duration-300 font-medium hover-lift hover-glow relative group">
-                Projects
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link to="/contact" className="hover:text-gray-300 transition-all duration-300 font-medium hover-lift hover-glow relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <AnimatedBackground />
+      <NavigationBar currentPage="home" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative">
@@ -276,22 +159,6 @@ const Index = () => {
                 <div className="absolute -bottom-4 right-1/4 w-8 h-8 bg-gray-700 rounded-full animate-pulse-glow animate-drift"></div>
                 <div className="absolute -left-8 top-1/3 w-10 h-10 border-2 border-gray-600 clip-path-triangle animate-wave hover-lift"></div>
                 <div className="absolute -right-6 bottom-1/3 w-6 h-6 bg-gray-500 animate-morph animate-delay-2"></div>
-                
-                {/* Particle trail */}
-                <div className="absolute inset-0 pointer-events-none">
-                  {Array.from({ length: 20 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="particle animate-drift opacity-30"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                        animationDelay: `${i * 0.2}s`,
-                        animationDuration: `${3 + Math.random() * 2}s`,
-                      }}
-                    />
-                  ))}
-                </div>
               </div>
             </div>
           </div>
