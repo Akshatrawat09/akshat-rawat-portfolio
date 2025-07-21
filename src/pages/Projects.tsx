@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,7 @@ const Projects = () => {
       status: "Production",
       date: "2024",
       stars: 156,
+      githubRepo: "skillswap-ai",
       features: [
         "95% accuracy in intent recognition",
         "Multilingual support for 5+ languages",
@@ -31,6 +33,7 @@ const Projects = () => {
       status: "Active",
       date: "2024",
       stars: 203,
+      githubRepo: "alpha-trend-tracker",
       features: [
         "Time series forecasting with LSTM networks",
         "Technical indicator integration",
@@ -47,6 +50,7 @@ const Projects = () => {
       status: "Complete",
       date: "2023",
       stars: 198,
+      githubRepo: "lead-forge-refined",
       features: [
         "Advanced text analysis with BERT",
         "Source credibility assessment",
@@ -63,6 +67,7 @@ const Projects = () => {
       status: "Active",
       date: "2024",
       stars: 245,
+      githubRepo: "tide-task-surf",
       features: [
         "Real-time collaborative study sessions",
         "Achievement system with badges and leaderboards",
@@ -182,10 +187,16 @@ const Projects = () => {
                       <ExternalLink className="w-4 h-4 mr-2" />
                       View Details
                     </Button>
-                    <Button variant="outline" size="sm" className="border-light-gray/30 text-light-gray hover:bg-light-gray hover:text-deep-charcoal">
-                      <Github className="w-4 h-4 mr-2" />
-                      Source Code
-                    </Button>
+                    <a
+                      href={`https://github.com/Akshatrawat09/${project.githubRepo}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" size="sm" className="border-light-gray/30 text-light-gray hover:bg-light-gray hover:text-deep-charcoal">
+                        <Github className="w-4 h-4 mr-2" />
+                        Source Code
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>

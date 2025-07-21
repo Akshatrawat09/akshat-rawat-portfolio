@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -36,24 +35,28 @@ const Index = () => {
       description: "Intelligent conversational AI that handles customer inquiries with 95% accuracy using advanced NLP techniques.",
       tech: ["Python", "NLP", "TensorFlow", "Flask"],
       icon: <Brain className="w-8 h-8" />,
+      githubRepo: "skillswap-ai",
     },
     {
       title: "Stock Price Prediction System", 
       description: "ML model predicting stock movements using historical data and market sentiment analysis with LSTM networks.",
       tech: ["Python", "LSTM", "Pandas", "Scikit-learn"],
       icon: <TrendingUp className="w-8 h-8" />,
+      githubRepo: "alpha-trend-tracker",
     },
     {
       title: "Fake News Detection",
       description: "NLP system that identifies and classifies fake news articles using BERT transformers and advanced text analysis.",
       tech: ["Python", "BERT", "NLP", "Transformers"],
       icon: <Code className="w-8 h-8" />,
+      githubRepo: "lead-forge-refined",
     },
     {
       title: "Gamified Social Study Companion",
       description: "Interactive learning platform that makes studying engaging through gamification elements and social features.",
       tech: ["React", "Node.js", "MongoDB", "Socket.io"],
       icon: <Users className="w-8 h-8" />,
+      githubRepo: "tide-task-surf",
     }
   ];
 
@@ -343,7 +346,14 @@ const Index = () => {
                         {project.icon}
                       </div>
                     </div>
-                    <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-white transition-all duration-300 hover-lift group-hover:animate-pulse" />
+                    <a
+                      href={`https://github.com/Akshatrawat09/${project.githubRepo}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:scale-110 transition-transform duration-300"
+                    >
+                      <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-white transition-all duration-300 hover-lift group-hover:animate-pulse" />
+                    </a>
                   </div>
                   <CardTitle className="text-xl text-white group-hover:text-gray-300 transition-all duration-300 leading-tight hover-glow">
                     {project.title}
@@ -463,7 +473,7 @@ const Index = () => {
             </div>
             <div className="flex gap-6">
               <a 
-                href="https://github.com/AkshatRawat-04" 
+                href="https://github.com/Akshatrawat09" 
                 className="p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700 transition-all duration-300 hover-lift hover-rotate-3d glass-morphism group"
                 aria-label="GitHub"
               >
